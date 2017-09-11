@@ -1,0 +1,8 @@
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\obj\Debug\WeatherProject.csprojResolveAssemblyReference.cache
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherData.exe.config
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherData.exe
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherData.pdb
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\obj\Debug\WeatherData.exe
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\obj\Debug\WeatherData.pdb
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherService.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherService.pdb

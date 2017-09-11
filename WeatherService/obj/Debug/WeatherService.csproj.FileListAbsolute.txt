@@ -1,0 +1,4 @@
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherService\bin\Debug\WeatherService.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherService\bin\Debug\WeatherService.pdb
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherService\obj\Debug\WeatherService.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherService\obj\Debug\WeatherService.pdb
