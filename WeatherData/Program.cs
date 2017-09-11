@@ -18,15 +18,19 @@ namespace WeatherProject
             Location location;
             string city;
 
-            Console.Write("Please enter the name of the city for temp info: ");
+            Console.Write("Please enter the name of the city for temp info or type exit: ");
             city = Console.ReadLine();
-            if (city == "0")
+            if (city == "exit" || city == "EXIT" || city == "Exit")
             {
                 return;
             }
             location = new Location(city);
 
-            WeatherData weatherService = service.GetWeatherData(location);
+            try
+            {
+                WeatherData weatherService = service.GetWeatherData(location);
+            }
+            catch (WeatherDataServiceException e) { Console.WriteLine(e); }
 
             Console.WriteLine("\nPress any key to continue...\n");
             Console.ReadKey();
