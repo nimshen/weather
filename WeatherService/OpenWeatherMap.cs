@@ -6,16 +6,19 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace WeatherService
 {
     public class OpenWeatherMap : IWeatherDataService
     {
+        //weatherdata object
+        private static WeatherData aWeatherData;
 
         //singleton, private constractor and instance getter
         private static OpenWeatherMap instance;
         private OpenWeatherMap() { }
-
+     
         public static OpenWeatherMap Instance
         {
             get
@@ -27,11 +30,11 @@ namespace WeatherService
         //interface method
         public WeatherData GetWeatherData(Location location)
         {
-            WeatherData w = null;
+            try {
+                RunAsync(location).Wait();
+            } catch (WeatherDataServiceException e) { Console.WriteLine(e); }
 
-            RunAsync(location).Wait();
-
-            return w;
+            return aWeatherData;
         }
 
         static async Task RunAsync(Location city)
@@ -49,7 +52,9 @@ namespace WeatherService
                 if (response.StatusCode == HttpStatusCode.OK) {
                     string result = await response.Content.ReadAsStringAsync();
                     //@ToDo show data in weatherproj
-                    Console.WriteLine(result);
+                    //Console.WriteLine(result);
+                    aWeatherData = JsonConvert.DeserializeObject<WeatherData>(result);
+                    //Console.WriteLine(aWeatherData.main.temp);
                 }
             }
         }

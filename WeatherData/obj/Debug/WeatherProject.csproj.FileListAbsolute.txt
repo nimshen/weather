@@ -6,3 +6,5 @@ c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\o
 c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\obj\Debug\WeatherData.pdb
 c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherService.dll
 c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\WeatherService.pdb
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\Newtonsoft.Json.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherData\bin\Debug\Newtonsoft.Json.xml
