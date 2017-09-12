@@ -13,27 +13,44 @@ namespace WeatherProject
         {
             //service
             IWeatherDataService service = WeatherDataServiceFactory.GetWeatherDataService(WeatherDataServiceFactory.WeatherService.OPEN_WEATHER_MAP);
+            //data
+            WeatherData weatherService = null;
 
             //location testing
             Location location;
             string city;
 
-            Console.Write("Please enter the name of the city for temp info or type exit: ");
-            city = Console.ReadLine();
-            if (city == "exit" || city == "EXIT" || city == "Exit")
+            while (true)
             {
-                return;
-            }
-            location = new Location(city);
+                Console.Write("Please enter the name of the city for temp info or type exit: ");
+                city = Console.ReadLine();
+                if (city == "exit" || city == "EXIT" || city == "Exit")
+                {
+                    return;
+                }
+                location = new Location(city);
 
-            try
-            {
-                WeatherData weatherService = service.GetWeatherData(location);
-            }
-            catch (WeatherDataServiceException e) { Console.WriteLine(e); }
+                try
+                {
+                    weatherService = service.GetWeatherData(location);
+                }
+                catch (WeatherDataServiceException e) { Console.WriteLine(e); }
 
-            Console.WriteLine("\nPress any key to continue...\n");
-            Console.ReadKey();
+                //ConsoleLog messages
+                //location
+                Console.WriteLine("\nLocation: " + weatherService.name + " (" + weatherService.coord.lon + "," + weatherService.coord.lat + ")");
+
+                //temp
+                Console.WriteLine("Temprature: " + weatherService.main.temp + " (min: " + weatherService.main.temp_min + ", max:" + weatherService.main.temp_max + ")");
+
+                //humidity and pressure
+                Console.WriteLine("Humidity: " + weatherService.main.humidity + ", Pressure: " + weatherService.main.pressure);
+
+                //wind and description
+                Console.WriteLine("Wind: " + weatherService.wind.speed + "\nWeather Description: " + weatherService.weather[0].description);
+                Console.WriteLine("\nPress any key to continue...\n");
+                Console.ReadKey();
+            }
         }
     }
 }
