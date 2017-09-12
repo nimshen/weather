@@ -13,7 +13,7 @@ namespace WeatherService
     public class OpenWeatherMap : IWeatherDataService
     {
         //weatherdata object
-        private static WeatherData aWeatherData;
+        private static string result;
 
         //singleton, private constractor and instance getter
         private static OpenWeatherMap instance;
@@ -30,9 +30,13 @@ namespace WeatherService
         //interface method
         public WeatherData GetWeatherData(Location location)
         {
+            WeatherData aWeatherData = null;
             try {
                 RunAsync(location).Wait();
             } catch (WeatherDataServiceException e) { Console.WriteLine(e); }
+
+            aWeatherData = JsonConvert.DeserializeObject<WeatherData>(result);
+            Console.WriteLine(aWeatherData.main.temp);
 
             return aWeatherData;
         }
@@ -50,10 +54,10 @@ namespace WeatherService
 
                 HttpResponseMessage response = await client.GetAsync("?q=" + location.Name + "&appid=" + key + "&units=" + units);
                 if (response.StatusCode == HttpStatusCode.OK) {
-                    string result = await response.Content.ReadAsStringAsync();
+                    result = await response.Content.ReadAsStringAsync();
                     //@ToDo show data in weatherproj
                     //Console.WriteLine(result);
-                    aWeatherData = JsonConvert.DeserializeObject<WeatherData>(result);
+                    //aWeatherData = JsonConvert.DeserializeObject<WeatherData>(result);
                     //Console.WriteLine(aWeatherData.main.temp);
                 }
             }
