@@ -14,7 +14,9 @@ namespace WeatherService.Tests
         [TestMethod()]
         public void GetWeatherDataServiceTest()
         {
-            throw new NotImplementedException();
+
+            OpenWeatherMap weatherServiceTester = OpenWeatherMap.Instance;
+            Assert.AreEqual(WeatherDataServiceFactory.GetWeatherDataService(WeatherDataServiceFactory.WeatherService.OPEN_WEATHER_MAP).GetType().Name, weatherServiceTester.GetType().Name);
         }
     }
 }

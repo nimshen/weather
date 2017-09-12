@@ -35,19 +35,27 @@ namespace WeatherProject
                     weatherService = service.GetWeatherData(location);
                 }
                 catch (WeatherDataServiceException e) { Console.WriteLine(e); }
+                
+                if (weatherService != null)
+                {
+                    //ConsoleLog messages
+                    //location
+                    Console.WriteLine("\nLocation: " + weatherService.name + " (" + weatherService.coord.lon + "," + weatherService.coord.lat + ")");
 
-                //ConsoleLog messages
-                //location
-                Console.WriteLine("\nLocation: " + weatherService.name + " (" + weatherService.coord.lon + "," + weatherService.coord.lat + ")");
+                    //temp
+                    Console.WriteLine("Temprature: " + weatherService.main.temp + " (min: " + weatherService.main.temp_min + ", max:" + weatherService.main.temp_max + ")");
 
-                //temp
-                Console.WriteLine("Temprature: " + weatherService.main.temp + " (min: " + weatherService.main.temp_min + ", max:" + weatherService.main.temp_max + ")");
+                    //humidity and pressure
+                    Console.WriteLine("Humidity: " + weatherService.main.humidity + ", Pressure: " + weatherService.main.pressure);
 
-                //humidity and pressure
-                Console.WriteLine("Humidity: " + weatherService.main.humidity + ", Pressure: " + weatherService.main.pressure);
-
-                //wind and description
-                Console.WriteLine("Wind: " + weatherService.wind.speed + "\nWeather Description: " + weatherService.weather[0].description);
+                    //wind and description
+                    Console.WriteLine("Wind: " + weatherService.wind.speed + "\nWeather Description: " + weatherService.weather[0].description);
+                }
+                else
+                {
+                    Console.WriteLine("\nLocation not found!");
+                }
+                
                 Console.WriteLine("\nPress any key to continue...\n");
                 Console.ReadKey();
             }
