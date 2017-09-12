@@ -1,0 +1,10 @@
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\WeatherServiceTests.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\WeatherServiceTests.pdb
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\WeatherService.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\Newtonsoft.Json.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\WeatherService.pdb
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\bin\Debug\Newtonsoft.Json.xml
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\obj\Debug\WeatherServiceTests.csprojResolveAssemblyReference.cache
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\obj\Debug\WeatherServiceTests.dll
+c:\users\kaktusx\documents\visual studio 2015\Projects\WeatherData\WeatherServiceTests\obj\Debug\WeatherServiceTests.pdb
